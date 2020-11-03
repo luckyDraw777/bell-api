@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS document(
   version    INTEGER NOT NULL       COMMENT 'Служебное поле hibernate',
   document_type_id INTEGER NOT NULL COMMENT 'Тип документа',
   document_date DATE NOT NULL       COMMENT 'Дата документа',
-  document_number INTEGER NOT NULL  COMMENT 'Номер документа'
+  document_number VARCHAR NOT NULL  COMMENT 'Номер документа'
 );
 COMMENT ON TABLE document IS 'Документы пользователей';
 
@@ -101,7 +101,7 @@ ALTER TABLE document ADD FOREIGN KEY (id) REFERENCES user (id);
 ALTER TABLE document ADD FOREIGN KEY (document_type_id) REFERENCES document_type (id);
 
 
-CREATE INDEX IX_Document_Code ON document_typy (code);
+CREATE INDEX IX_Document_Code ON document_type (code);
 CREATE INDEX IX_Country_Name ON country (name);
 CREATE INDEX IX_Country_Code ON country (code);
 
