@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS organization (
   inn VARCHAR(10) NOT NULL          COMMENT 'ИНН',
   kpp VARCHAR(10) NOT NULL          COMMENT 'КПП',
   address VARCHAR(100) NOT NULL     COMMENT 'Адрес',
-  pnone VARCHAR(20)                 COMMENT 'Номер телефона',
+  phone VARCHAR(20)                 COMMENT 'Номер телефона',
   is_active BIT NOT NULL            COMMENT 'Активна'
 );
 COMMENT ON TABLE organization IS 'Организации';
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS office (
   org_id INTEGER NOT NULL           COMMENT 'ID организации',
   name VARCHAR(50) NOT NULL         COMMENT 'Название офиса',
   address VARCHAR(100) NOT NULL     COMMENT 'Адрес офиса',
-  pnone VARCHAR(20)                 COMMENT 'Номер телефона офиса',
+  phone VARCHAR(20)                 COMMENT 'Номер телефона офиса',
   is_active BIT NOT NULL            COMMENT 'Активен'
 );
 COMMENT ON TABLE office IS 'Офисы';
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS document(
   version    INTEGER NOT NULL       COMMENT 'Служебное поле hibernate',
   document_type_id INTEGER NOT NULL COMMENT 'Тип документа',
   document_date DATE NOT NULL       COMMENT 'Дата документа',
-  document_number VARCHAR NOT NULL  COMMENT 'Номер документа'
+  document_number VARCHAR(10) NOT NULL  COMMENT 'Номер документа'
 );
 COMMENT ON TABLE document IS 'Документы пользователей';
 
