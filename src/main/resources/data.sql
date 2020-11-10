@@ -271,7 +271,7 @@ INSERT INTO DOCUMENT_TYPE (VERSION, NAME, CODE) VALUES
   (1, 'Иные документы', '91');
 
 
-INSERT INTO ORGANIZATION (VERSION, NAME, FULL_NAME, INN, KPP, ADDRESS, PNONE, IS_ACTIVE) VALUES
+INSERT INTO ORGANIZATION (VERSION, NAME, FULL_NAME, INN, KPP, ADDRESS, PHONE, IS_ACTIVE) VALUES
     (1, 'Ромашка', 'ООО РОМАШКА', '6548125489', '321584587', 'ул. Мира 10 оф.11', '+7958235648', 1),
     (1, 'Рога и Копыта', 'ООО Рога и Копыта', '3548621587', '3215845876', 'ул. Ленина 10 оф.11', '+7495235648', 1),
     (1, 'Лютик', 'ООО Лютик', '1236578945', '528517414', 'ул. Кирова 10 оф.11', '+7958232585', 1),
@@ -279,7 +279,7 @@ INSERT INTO ORGANIZATION (VERSION, NAME, FULL_NAME, INN, KPP, ADDRESS, PNONE, IS
     (1, 'Газпром', 'ПАО Газпром', '4316576458', '1597435796', 'ул. Королева 10 оф.11', '+7958459848', 1);
 
 
-INSERT INTO OFFICE (VERSION, ORG_ID, NAME, ADDRESS, PNONE, IS_ACTIVE) VALUES
+INSERT INTO OFFICE (VERSION, ORG_ID, NAME, ADDRESS, PHONE, IS_ACTIVE) VALUES
     (1, 1, 'Ромашка 1', 'г.Мурманск', '', 1),
     (1, 1, 'Ромашка 2', 'г.Киров', '', 1),
     (1, 1, 'Ромашка 3', 'г.Москва', '', 1),

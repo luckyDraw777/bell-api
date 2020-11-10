@@ -8,6 +8,7 @@ public class BellApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BellApiApplication.class, args);
+
     }
 
 }
