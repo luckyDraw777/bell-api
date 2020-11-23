@@ -88,14 +88,12 @@ CREATE INDEX IX_Office_Org_Id ON office (org_id);
 ALTER TABLE office ADD FOREIGN KEY (org_id) REFERENCES organization (id);
 
 
-CREATE INDEX IX_User_Office_Id ON user (office_id);
 CREATE INDEX IX_User_Country_Id ON user (country_id);
 CREATE INDEX IX_User_Second_Name ON user (second_name);
 ALTER TABLE user ADD FOREIGN KEY (office_id) REFERENCES office (id);
 ALTER TABLE user ADD FOREIGN KEY (country_id) REFERENCES country (id);
 
 
-CREATE INDEX IX_Document_Id ON document (id);
 CREATE INDEX IX_Document_Number ON document (document_number);
 ALTER TABLE document ADD FOREIGN KEY (id) REFERENCES user (id);
 ALTER TABLE document ADD FOREIGN KEY (document_type_id) REFERENCES document_type (id);

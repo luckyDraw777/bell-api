@@ -4,7 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
-import java.util.Set;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.util.List;
 
 @Repository
 public abstract class AbstractDao<T> implements GenericDao<T>{
@@ -29,7 +33,7 @@ public abstract class AbstractDao<T> implements GenericDao<T>{
 
     @Override
     public void update(T t) {
-
+        em.merge(t);
     }
 
     @Override
@@ -38,7 +42,15 @@ public abstract class AbstractDao<T> implements GenericDao<T>{
     }
 
     @Override
-    public Set<T> getAll(Class<T> type) {
-        return null;
+    public List<T> getAll(Class<T> type) {
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<T> cq = cb.createQuery(type);
+        Root<T> root = cq.from(type);
+        CriteriaQuery<T> all = cq.select(root);
+
+        TypedQuery<T> allQuery = em.createQuery(all);
+
+        return allQuery.getResultList();
     }
 }

@@ -1,6 +1,6 @@
 package com.bellapi.dao;
 
-import java.util.Set;
+import java.util.List;
 
 public interface GenericDao<T> {
 
@@ -8,6 +8,6 @@ public interface GenericDao<T> {
     void create(T t);
     void update(T t);
     void remove(T t);
-    Set<T> getAll(Class<T> type);
+    List<T> getAll(Class<T> type);
 
 }

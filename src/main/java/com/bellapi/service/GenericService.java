@@ -1,6 +1,6 @@
 package com.bellapi.service;
 
-import java.util.Set;
+import java.util.List;
 
 public interface GenericService<T> {
 
@@ -8,5 +8,5 @@ public interface GenericService<T> {
     void create(T t);
     void update(T t);
     void remove(T t);
-    Set<T> getAll(Class<T> type);
+    List<T> getAll(Class<T> type);
 }
